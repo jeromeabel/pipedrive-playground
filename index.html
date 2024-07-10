@@ -1,1 +1,18 @@
-<h1>Hello</h1>
+<html>
+  <head>
+    <title>Custom UI: Basic HTML example</title>
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/@pipedrive/app-extensions-sdk@0.2.0-rc.0/dist/index.umd.js"></script>
+    <script>
+      (async function () {
+        const sdk = await new AppExtensionsSdk().initialize();
+      })();
+    </script>
+  </head>
+
+  <body>
+    <h2>Hello from Custom UI</h2>
+    <p>Open any deal and Check the details section 🏃‍♂️</p>
+  </body>
+</html>
