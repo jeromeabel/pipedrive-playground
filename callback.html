@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Callback Page</title>
+    <script>
+        // Function to parse URL parameters
+        function getParameterByName(name, url) {
+            if (!url) url = window.location.href;
+            name = name.replace(/[\[\]]/g, '\\$&');
+            var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, ' '));
+        }
+
+        // Main function to handle callback
+        function handleCallback() {
+            var authorizationCode = getParameterByName('code');
+            if (authorizationCode) {
+                // Process the authorization code (e.g., send it to your server)
+                console.log('Authorization code received:', authorizationCode);
+
+                // Example: Redirect user back to Pipedrive or perform further actions
+                // window.location.href = 'https://app.pipedrive.com'; // Example redirect
+            } else {
+                console.error('Authorization code not found in URL.');
+            }
+        }
+
+        // Execute handleCallback function on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            handleCallback();
+        });
+    </script>
+</head>
+<body>
+    <h1>Callback Page</h1>
+    <p>Processing authorization...</p>
+</body>
+</html>
