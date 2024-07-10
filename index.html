@@ -6,9 +6,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@pipedrive/app-extensions-sdk@0.2.0-rc.0/dist/index.umd.js"></script>
     <script>
       (async function () {
-       // const sdk = await new AppExtensionsSdk().initialize();
-        // Pass in id manually and provide custom UI size
-      const sdk = await new AppExtensionsSDK({ identifier: '4178432be4232896' }).initialize({ size: { height: 500 } });
+        const sdk = await new AppExtensionsSdk().initialize();
       })();
     </script>
   </head>
